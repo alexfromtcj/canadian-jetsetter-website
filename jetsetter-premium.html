@@ -58,7 +58,7 @@
       <div class="container">
         <h1 id="hero-heading">Jetsetter Premium</h1>
         <p class="hero-location">
-          Effortless Travel Savings: Master Points and Fare Drop Emails
+          Effortless Travel Savings with the Best Deals Sent Right to your Inbox
         </p>
 
         <div class="hero-cta-group">
@@ -260,7 +260,112 @@
     </section>
 
     <!-- ══════════════════════════════════════════
-         5. WHO CAN BENEFIT
+         5. COMPARE MEMBERSHIPS
+    ══════════════════════════════════════════ -->
+    <section class="compare-section" id="compare-memberships" aria-labelledby="compare-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="compare-heading">Compare Memberships</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="ct-wrap">
+          <div class="ct-float-badge" aria-hidden="true">SAVE UP TO<br>$40 WITH<br>ANNUAL</div>
+          <table class="ct-table">
+            <thead>
+              <tr>
+                <th class="ct-th ct-th--feat" scope="col"></th>
+                <th class="ct-th ct-th--free" scope="col">
+                  <span class="ct-tier-name">Free</span>
+                </th>
+                <th class="ct-th ct-th--prem" scope="col">
+                  <span class="ct-tier-name">Premium</span>
+                  <div class="ct-prem-pricing">
+                    <div>$19.99 MONTHLY</div>
+                    <div>$199.00 ANNUALLY</div>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="ct-row">
+                <td class="ct-td ct-td--feat">Weekly newsletter with the top Economy flight deals</td>
+                <td class="ct-td ct-td--free ct-td--center"><span class="ct-icon ct-icon--yes" aria-label="Included">✓</span></td>
+                <td class="ct-td ct-td--prem ct-td--center"><span class="ct-icon ct-icon--yes" aria-label="Included">✓</span></td>
+              </tr>
+              <tr class="ct-row">
+                <td class="ct-td ct-td--feat">Ad free newsletter experience</td>
+                <td class="ct-td ct-td--free ct-td--center"><span class="ct-icon ct-icon--no" aria-label="Not included">✗</span></td>
+                <td class="ct-td ct-td--prem ct-td--center"><span class="ct-icon ct-icon--yes" aria-label="Included">✓</span></td>
+              </tr>
+              <tr class="ct-row">
+                <td class="ct-td ct-td--feat">Unlock the Jetsetter Premium Newsletter section with top Business class deals</td>
+                <td class="ct-td ct-td--free ct-td--center"><span class="ct-icon ct-icon--no" aria-label="Not included">✗</span></td>
+                <td class="ct-td ct-td--prem ct-td--center"><span class="ct-icon ct-icon--yes" aria-label="Included">✓</span></td>
+              </tr>
+              <tr class="ct-row">
+                <td class="ct-td ct-td--feat">Access to The Canadian Points Handbook (updated monthly)</td>
+                <td class="ct-td ct-td--free ct-td--center"><span class="ct-icon ct-icon--no" aria-label="Not included">✗</span></td>
+                <td class="ct-td ct-td--prem ct-td--center"><span class="ct-icon ct-icon--yes" aria-label="Included">✓</span></td>
+              </tr>
+              <tr class="ct-cta-row">
+                <td class="ct-td ct-td--feat ct-td--cta"></td>
+                <td class="ct-td ct-td--free ct-td--cta">
+                  <a href="https://thecanadianjetsetter.beehiiv.com/subscribe" class="ct-btn ct-btn--solid-red" target="_blank" rel="noopener noreferrer">GET DEALS FOR FREE →</a>
+                </td>
+                <td class="ct-td ct-td--prem ct-td--cta">
+                  <a href="https://buy.stripe.com/28odSKd4e9Hu9z228a" class="ct-btn ct-btn--outline-light" target="_blank" rel="noopener noreferrer">START FOR $19 MONTHLY →</a>
+                  <a href="https://buy.stripe.com/14keWOfcm3j626A6or" class="ct-btn ct-btn--solid-red" target="_blank" rel="noopener noreferrer">START FOR $199 YEARLY →</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ── MOBILE TOGGLE (visible < 768px) ── -->
+        <div class="ct-mobile">
+
+          <div class="ct-tabs" role="tablist" aria-label="Membership tier">
+            <button class="ct-tab ct-tab--active" id="ct-tab-free" data-tab="free" role="tab" aria-selected="true" aria-controls="ct-panel-free">Free</button>
+            <button class="ct-tab" id="ct-tab-prem" data-tab="prem" role="tab" aria-selected="false" aria-controls="ct-panel-prem">Premium</button>
+          </div>
+
+          <!-- FREE PANEL -->
+          <div class="ct-panel ct-panel--free" id="ct-panel-free" role="tabpanel" aria-labelledby="ct-tab-free">
+            <ul class="ct-mobile-list">
+              <li><span class="ct-icon ct-icon--yes" aria-hidden="true">✓</span><span>Weekly newsletter with the top Economy flight deals</span></li>
+              <li><span class="ct-icon ct-icon--no" aria-hidden="true">✗</span><span>Ad free newsletter experience</span></li>
+              <li><span class="ct-icon ct-icon--no" aria-hidden="true">✗</span><span>Unlock the Jetsetter Premium Newsletter section with top Business class deals</span></li>
+              <li><span class="ct-icon ct-icon--no" aria-hidden="true">✗</span><span>Access to The Canadian Points Handbook (updated monthly)</span></li>
+            </ul>
+            <a href="https://thecanadianjetsetter.beehiiv.com/subscribe" class="ct-btn ct-btn--solid-red ct-mobile-btn" target="_blank" rel="noopener noreferrer">GET DEALS FOR FREE →</a>
+          </div>
+
+          <!-- PREMIUM PANEL -->
+          <div class="ct-panel ct-panel--prem" id="ct-panel-prem" role="tabpanel" aria-labelledby="ct-tab-prem" hidden>
+            <div class="ct-mobile-prem-top">
+              <div class="ct-save-badge ct-save-badge--mobile">SAVE UP TO $40 WITH ANNUAL</div>
+              <div class="ct-mobile-pricing">$199.00 ANNUALLY<br>$19.99 MONTHLY</div>
+            </div>
+            <ul class="ct-mobile-list ct-mobile-list--prem">
+              <li><span class="ct-icon ct-icon--yes" aria-hidden="true">✓</span><span>Weekly newsletter with the top Economy flight deals</span></li>
+              <li><span class="ct-icon ct-icon--yes" aria-hidden="true">✓</span><span>Ad free newsletter experience</span></li>
+              <li><span class="ct-icon ct-icon--yes" aria-hidden="true">✓</span><span>Unlock the Jetsetter Premium Newsletter section with top Business class deals</span></li>
+              <li><span class="ct-icon ct-icon--yes" aria-hidden="true">✓</span><span>Access to The Canadian Points Handbook (updated monthly)</span></li>
+            </ul>
+            <div class="ct-mobile-btns">
+              <a href="https://buy.stripe.com/28odSKd4e9Hu9z228a" class="ct-btn ct-btn--outline-light ct-mobile-btn" target="_blank" rel="noopener noreferrer">START FOR $19 MONTHLY →</a>
+              <a href="https://buy.stripe.com/14keWOfcm3j626A6or" class="ct-btn ct-btn--solid-red ct-mobile-btn" target="_blank" rel="noopener noreferrer">START FOR $199 YEARLY →</a>
+            </div>
+          </div>
+
+        </div><!-- end ct-mobile -->
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         6. WHO CAN BENEFIT
     ══════════════════════════════════════════ -->
     <section class="benefit-section" aria-labelledby="benefit-heading">
       <div class="container">
@@ -288,63 +393,6 @@
             <span class="bullet-text">Travel enthusiasts aiming for unforgettable trips</span>
           </li>
         </ul>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════
-         6. COMPARE MEMBERSHIPS
-    ══════════════════════════════════════════ -->
-    <section class="compare-section" aria-labelledby="compare-heading">
-      <div class="container">
-        <div class="section-header">
-          <h2 id="compare-heading">Compare Memberships</h2>
-          <div class="section-divider"></div>
-        </div>
-
-        <div class="compare-grid">
-
-          <!-- FREE card -->
-          <div class="compare-card">
-            <p class="compare-tier">Free</p>
-            <ul class="compare-features">
-              <li>Weekly newsletter with top economy flight deals</li>
-            </ul>
-            <a
-              href="https://thecanadianjetsetter.beehiiv.com/subscribe"
-              class="btn btn-outline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Get Deals For Free →</a>
-          </div>
-
-          <!-- PREMIUM card -->
-          <div class="compare-card compare-card--featured">
-            <span class="pricing-badge">Most Popular</span>
-            <p class="compare-tier">Premium</p>
-            <div class="compare-price">$19.99<sub>/mo</sub></div>
-            <p class="compare-or">or $199.00 / year &nbsp;·&nbsp; Save up to $40 with annual</p>
-            <ul class="compare-features">
-              <li>Ad free newsletter experience</li>
-              <li>Jetsetter Premium Newsletter with top business class deals</li>
-              <li>Access to The Canadian Points Handbook (updated monthly)</li>
-            </ul>
-            <div class="compare-ctas">
-              <a
-                href="https://buy.stripe.com/28odSKd4e9Hu9z228a"
-                class="btn btn-primary"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Start for $19 Monthly →</a>
-              <a
-                href="https://buy.stripe.com/14keWOfcm3j626A6or"
-                class="btn btn-outline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Start for $199 Yearly →</a>
-            </div>
-          </div>
-
-        </div>
       </div>
     </section>
 
@@ -471,6 +519,7 @@
 
           <details class="faq-item">
             <summary class="faq-question">Where do I sign up?</summary>
+            <a href="#compare-memberships" class="faq-view-plans-btn">View Plans →</a>
             <div class="faq-answer">
               Signing up is easy! Just click the button above to choose between a monthly or annual subscription. After signing up you will get a welcome email that guides you through accessing all the perks.
             </div>
@@ -615,6 +664,31 @@
         dropdown.classList.remove('is-open');
       }
     });
+
+    // ── COMPARE MEMBERSHIPS MOBILE TOGGLE ──────
+    (function () {
+      const tabs   = document.querySelectorAll('.ct-tab');
+      const panels = document.querySelectorAll('.ct-panel');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const target = tab.dataset.tab;
+
+          // Update tab states
+          tabs.forEach(t => {
+            t.classList.remove('ct-tab--active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          tab.classList.add('ct-tab--active');
+          tab.setAttribute('aria-selected', 'true');
+
+          // Show matching panel, hide the other
+          panels.forEach(panel => {
+            panel.hidden = (panel.id !== 'ct-panel-' + target);
+          });
+        });
+      });
+    })();
 
     // ── DRAGGABLE CAROUSEL WITH AUTO-SCROLL ────
     (function () {
