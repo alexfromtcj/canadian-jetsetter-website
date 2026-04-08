@@ -17,13 +17,31 @@
   ══════════════════════════════════════════ -->
   <header class="top-nav" role="banner">
     <div class="container">
-      <a href="/" class="nav-logo" aria-label="The Canadian Jetsetter — Home">
+      <a href="index.html" class="nav-logo" aria-label="The Canadian Jetsetter — Home">
         <img
           src="TCJ Website Assets/icons/Jetsetter text logo.png"
           alt="The Canadian Jetsetter"
           loading="eager"
         />
       </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <div class="nav-item nav-item--dropdown">
+          <button class="nav-link nav-link--btn" aria-expanded="false" aria-haspopup="true">
+            OFFERINGS <span class="nav-chevron" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="nav-submenu" role="menu">
+            <a href="jetsetter-free.html" role="menuitem">Jetsetter Free</a>
+            <a href="jetsetter-premium.html" role="menuitem">Jetsetter Premium</a>
+            <a href="economy.html" role="menuitem">Jetsetter Economy</a>
+            <a href="golden-visa.html" role="menuitem">Golden Visa</a>
+          </div>
+        </div>
+        <a href="links.html" class="nav-link">LINKS</a>
+        <a href="#" class="nav-link">CREDIT CARDS</a>
+        <a href="blog.html" class="nav-link">BLOG</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
+      </nav>
 
       <button
         class="nav-hamburger"
@@ -38,7 +56,7 @@
 
       <nav class="nav-dropdown" id="nav-dropdown" aria-hidden="true">
         <ul>
-          <li><a href="/">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="jetsetter-free.html">Jetsetter Free</a></li>
           <li><a href="jetsetter-premium.html">Jetsetter Premium</a></li>
           <li><a href="economy.html">Jetsetter Economy</a></li>
@@ -257,7 +275,7 @@
     <div class="container">
       <div class="footer-inner">
 
-        <a href="/" class="footer-logo" aria-label="The Canadian Jetsetter — Home">
+        <a href="index.html" class="footer-logo" aria-label="The Canadian Jetsetter — Home">
           <img
             src="TCJ Website Assets/logos/banner_text_logo.png"
             alt="The Canadian Jetsetter"
@@ -285,6 +303,24 @@
   <script>
     // Dynamic copyright year
     document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    // Desktop OFFERINGS dropdown
+    const offeringsBtn = document.querySelector('.nav-link--btn');
+    const submenu = document.querySelector('.nav-submenu');
+
+    offeringsBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = offeringsBtn.getAttribute('aria-expanded') === 'true';
+      offeringsBtn.setAttribute('aria-expanded', !isOpen);
+      submenu.classList.toggle('is-open', !isOpen);
+    });
+
+    document.addEventListener('click', () => {
+      offeringsBtn.setAttribute('aria-expanded', 'false');
+      submenu.classList.remove('is-open');
+    });
+
+    submenu.addEventListener('click', (e) => e.stopPropagation());
 
     // Hamburger menu toggle
     const hamburger = document.querySelector('.nav-hamburger');

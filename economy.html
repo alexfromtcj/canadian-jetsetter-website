@@ -17,13 +17,31 @@
   ══════════════════════════════════════════ -->
   <header class="top-nav" role="banner">
     <div class="container">
-      <a href="/" class="nav-logo" aria-label="The Canadian Jetsetter — Home">
+      <a href="index.html" class="nav-logo" aria-label="The Canadian Jetsetter — Home">
         <img
           src="TCJ Website Assets/icons/Jetsetter text logo.png"
           alt="The Canadian Jetsetter"
           loading="eager"
         />
       </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <div class="nav-item nav-item--dropdown">
+          <button class="nav-link nav-link--btn" aria-expanded="false" aria-haspopup="true">
+            OFFERINGS <span class="nav-chevron" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="nav-submenu" role="menu">
+            <a href="jetsetter-free.html" role="menuitem">Jetsetter Free</a>
+            <a href="jetsetter-premium.html" role="menuitem">Jetsetter Premium</a>
+            <a href="economy.html" role="menuitem">Jetsetter Economy</a>
+            <a href="golden-visa.html" role="menuitem">Golden Visa</a>
+          </div>
+        </div>
+        <a href="links.html" class="nav-link">LINKS</a>
+        <a href="#" class="nav-link">CREDIT CARDS</a>
+        <a href="blog.html" class="nav-link">BLOG</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
+      </nav>
 
       <button
         class="nav-hamburger"
@@ -38,13 +56,13 @@
 
       <nav class="nav-dropdown" id="nav-dropdown" aria-hidden="true">
         <ul>
-          <li><a href="/">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="jetsetter-free.html">Jetsetter Free</a></li>
-          <li><a href="#">Jetsetter Premium</a></li>
-          <li><a href="#">Jetsetter Economy</a></li>
-          <li><a href="#">Golden Visa</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="jetsetter-premium.html">Jetsetter Premium</a></li>
+          <li><a href="economy.html">Jetsetter Economy</a></li>
+          <li><a href="golden-visa.html">Golden Visa</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -501,7 +519,7 @@
     <div class="container">
       <div class="footer-inner">
 
-        <a href="#" class="footer-logo" aria-label="The Canadian Jetsetter — Home">
+        <a href="index.html" class="footer-logo" aria-label="The Canadian Jetsetter — Home">
           <img
             src="TCJ Website Assets/logos/banner_text_logo.png"
             alt="The Canadian Jetsetter"
@@ -511,8 +529,8 @@
 
         <nav class="footer-nav" aria-label="Footer navigation">
           <a href="https://buy.stripe.com/aEUbKC9S22f2h1u7sC" target="_blank" rel="noopener noreferrer">Subscribe</a>
-          <a href="#">Economy</a>
-          <a href="#">Premium</a>
+          <a href="economy.html">Economy</a>
+          <a href="jetsetter-premium.html">Premium</a>
           <a href="#">About</a>
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
@@ -529,6 +547,24 @@
   <script>
     // Dynamic copyright year
     document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    // Desktop OFFERINGS dropdown
+    const offeringsBtn = document.querySelector('.nav-link--btn');
+    const submenu = document.querySelector('.nav-submenu');
+
+    offeringsBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = offeringsBtn.getAttribute('aria-expanded') === 'true';
+      offeringsBtn.setAttribute('aria-expanded', !isOpen);
+      submenu.classList.toggle('is-open', !isOpen);
+    });
+
+    document.addEventListener('click', () => {
+      offeringsBtn.setAttribute('aria-expanded', 'false');
+      submenu.classList.remove('is-open');
+    });
+
+    submenu.addEventListener('click', (e) => e.stopPropagation());
 
     // Hamburger menu toggle
     const hamburger = document.querySelector('.nav-hamburger');
@@ -561,6 +597,131 @@
         dropdown.classList.remove('is-open');
       }
     });
+
+    // ── CAROUSEL: AUTO-SCROLL + DRAG ──────────────────
+    (function () {
+      const wrapper  = document.querySelector('.deals-track-wrapper');
+      const track    = document.querySelector('.deals-track');
+      const DURATION = 32; // seconds — must match CSS animation duration
+
+      let curOffset  = 0;   // current pixel offset (always negative or zero)
+      let isDragging = false;
+      let startX     = 0;
+      let startOffset = 0;
+      let velX       = 0;   // pixels per millisecond
+      let lastX      = 0;
+      let lastTime   = 0;
+      let rafId      = null;
+
+      // Half the track width = one full set of cards (loop point)
+      function halfW() { return track.scrollWidth / 2; }
+
+      // Extract translateX in pixels from the computed transform matrix
+      function readTranslateX() {
+        return new DOMMatrix(getComputedStyle(track).transform).m41;
+      }
+
+      // Keep offset in the range (-halfW, 0] for seamless looping
+      function normalise(x) {
+        const hw = halfW();
+        x = x % hw;
+        if (x > 0) x -= hw;
+        return x;
+      }
+
+      // Apply pixel offset directly (overrides animation)
+      function applyOffset(x) {
+        curOffset = x;
+        track.style.transform = `translateX(${normalise(x)}px)`;
+      }
+
+      // Pause: freeze the animation and capture current position as inline transform
+      function pauseCarousel() {
+        if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+        const x = readTranslateX();           // read before killing animation
+        track.style.animation = 'none';
+        applyOffset(x);
+      }
+
+      // Resume: re-apply animation starting from the current drag position
+      function resumeCarousel() {
+        const norm     = normalise(curOffset);
+        const progress = norm < 0 ? -norm / halfW() : 0; // 0 → 1
+        const delay    = -(progress * DURATION);          // negative = already elapsed
+        track.style.animation = `scroll-deals ${DURATION}s linear ${delay}s infinite`;
+        track.style.transform = '';
+      }
+
+      // ── HOVER: pause on enter, resume on leave ────────
+      wrapper.addEventListener('mouseenter', pauseCarousel);
+      wrapper.addEventListener('mouseleave', () => {
+        if (!isDragging) resumeCarousel();
+      });
+
+      // ── DRAG START ────────────────────────────────────
+      function dragStart(clientX) {
+        pauseCarousel();             // ensure animation is frozen
+        isDragging  = true;
+        startX      = clientX;
+        startOffset = curOffset;
+        velX        = 0;
+        lastX       = clientX;
+        lastTime    = performance.now();
+        wrapper.classList.add('is-grabbing');
+      }
+
+      // ── DRAG MOVE ─────────────────────────────────────
+      function dragMove(clientX) {
+        if (!isDragging) return;
+        const now = performance.now();
+        const dt  = now - lastTime;
+        if (dt > 0) velX = (clientX - lastX) / dt;
+        lastX    = clientX;
+        lastTime = now;
+        applyOffset(startOffset + (clientX - startX));
+      }
+
+      // ── DRAG END + MOMENTUM ───────────────────────────
+      function dragEnd() {
+        if (!isDragging) return;
+        isDragging = false;
+        wrapper.classList.remove('is-grabbing');
+
+        let momentum = velX * 80;   // scale velocity to pixel distance
+        const decay  = 0.85;        // friction per frame
+
+        function glide() {
+          if (Math.abs(momentum) < 0.3) {
+            // Check if mouse is still over wrapper before resuming
+            resumeCarousel();
+            return;
+          }
+          applyOffset(curOffset + momentum);
+          momentum *= decay;
+          rafId = requestAnimationFrame(glide);
+        }
+        rafId = requestAnimationFrame(glide);
+      }
+
+      // ── MOUSE EVENTS ──────────────────────────────────
+      wrapper.addEventListener('mousedown', (e) => {
+        e.preventDefault();                  // block native image drag
+        dragStart(e.clientX);
+      });
+      window.addEventListener('mousemove', (e) => dragMove(e.clientX));
+      window.addEventListener('mouseup',   dragEnd);
+
+      // ── TOUCH EVENTS ──────────────────────────────────
+      wrapper.addEventListener('touchstart', (e) => {
+        dragStart(e.touches[0].clientX);
+      }, { passive: true });
+
+      wrapper.addEventListener('touchmove', (e) => {
+        dragMove(e.touches[0].clientX);
+      }, { passive: true });
+
+      wrapper.addEventListener('touchend', dragEnd);
+    })();
   </script>
 
 </body>
