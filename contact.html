@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — The Canadian Jetsetter</title>
+  <meta name="description" content="Get in touch with The Canadian Jetsetter. Send us your travel questions or partnership inquiries and we'll get back to you within 24–48 hours." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="contact.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       1. TOP NAV
+  ══════════════════════════════════════════ -->
+  <header class="top-nav" role="banner">
+    <div class="container">
+      <a href="/" class="nav-logo" aria-label="The Canadian Jetsetter — Home">
+        <img
+          src="TCJ Website Assets/icons/Jetsetter text logo.png"
+          alt="The Canadian Jetsetter"
+          loading="eager"
+        />
+      </a>
+
+      <button
+        class="nav-hamburger"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-dropdown"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-dropdown" id="nav-dropdown" aria-hidden="true">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="jetsetter-free.html">Jetsetter Free</a></li>
+          <li><a href="jetsetter-premium.html">Jetsetter Premium</a></li>
+          <li><a href="economy.html">Jetsetter Economy</a></li>
+          <li><a href="golden-visa.html">Golden Visa</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════
+         2. HERO
+    ══════════════════════════════════════════ -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <p class="hero-label">Contact Us</p>
+        <h1 id="hero-heading">Ready to Amplify Your Brand's Impact?</h1>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         FOLDER TABS + CONTENT PANELS
+    ══════════════════════════════════════════ -->
+    <div class="folder-wrapper">
+
+      <div class="folder-tab-row" role="tablist" aria-label="Page sections">
+        <button class="tab-btn tab-active" data-target="panel-contact" role="tab" aria-selected="true" aria-controls="panel-contact">Contact Us</button>
+        <button class="tab-btn" data-target="panel-partnerships" role="tab" aria-selected="false" aria-controls="panel-partnerships">Work With Us</button>
+      </div>
+
+      <div class="folder-content-area" id="folder-content">
+
+        <!-- ══════════════════════════════════════════
+             3. CONTACT SECTION
+        ══════════════════════════════════════════ -->
+        <section id="panel-contact" class="contact-section" aria-labelledby="contact-heading">
+      <div class="contact-form-wrap">
+
+        <h2 id="contact-heading">Contact Us</h2>
+        <p class="contact-subtext">We'd love to hear from you. Drop us a message and we'll get back to you as soon as possible.</p>
+
+        <form class="contact-form" action="mailto:thecanadianjetsetter@gmail.com" method="POST" enctype="text/plain" novalidate>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-first-name">First Name <span class="req">*</span></label>
+              <input type="text" id="contact-first-name" name="first_name" autocomplete="given-name" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-last-name">Last Name <span class="req">*</span></label>
+              <input type="text" id="contact-last-name" name="last_name" autocomplete="family-name" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-email">Email Address <span class="req">*</span></label>
+            <input type="email" id="contact-email" name="email" autocomplete="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="contact-subject">Subject <span class="req">*</span></label>
+            <select id="contact-subject" name="subject" required>
+              <option value="" disabled selected></option>
+              <option value="General Inquiry">General Inquiry</option>
+              <option value="Partnerships & Advertising">Partnerships &amp; Advertising</option>
+              <option value="Media & Press">Media &amp; Press</option>
+              <option value="Newsletter Help">Newsletter Help</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message">Message <span class="req">*</span></label>
+            <textarea id="contact-message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Send Message →</button>
+
+        </form>
+
+        <p class="contact-email-alt">Prefer email? Reach us directly at <a href="mailto:thecanadianjetsetter@gmail.com">thecanadianjetsetter@gmail.com</a></p>
+
+      </div>
+    </section>
+
+        <!-- ══════════════════════════════════════════
+             4. PARTNERSHIPS SECTION
+        ══════════════════════════════════════════ -->
+        <section id="panel-partnerships" class="partnerships-section" aria-labelledby="partnerships-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="partnerships-heading">Work With Us</h2>
+          <p>Interested in partnering with The Canadian Jetsetter? We work with travel brands, airlines, hotels and financial products to reach our engaged community of Canadian travellers.</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="partnerships-grid">
+
+          <div class="partnership-card">
+            <h3>Brand Partnerships</h3>
+            <p>Collaborate with us to reach thousands of engaged Canadian travellers and deal hunters.</p>
+          </div>
+
+          <div class="partnership-card">
+            <h3>Sponsored Content</h3>
+            <p>Feature your product or service in our newsletter or social media channels.</p>
+          </div>
+
+          <div class="partnership-card">
+            <h3>Affiliate Programs</h3>
+            <p>Join our affiliate network and grow together with The Canadian Jetsetter community.</p>
+          </div>
+
+        </div>
+
+        <div style="text-align:center;">
+          <a
+            href="mailto:thecanadianjetsetter@gmail.com"
+            class="btn btn-outline"
+          >Get In Touch →</a>
+        </div>
+
+      </div>
+        </section>
+
+      </div><!-- /.folder-content-area -->
+    </div><!-- /.folder-wrapper -->
+
+    <!-- ══════════════════════════════════════════
+         5. SOCIAL PROOF BAR
+    ══════════════════════════════════════════ -->
+    <div class="social-proof-bar" role="region" aria-label="Social media following">
+      <div class="container">
+        <div class="social-proof-inner">
+
+          <div class="social-stat">
+            <span class="social-stat-number">100K+</span>
+            <span class="social-stat-label">TikTok Followers</span>
+          </div>
+
+          <div class="social-stat">
+            <span class="social-stat-number">120K+</span>
+            <span class="social-stat-label">Instagram Followers</span>
+          </div>
+
+          <div class="social-stat">
+            <span class="social-stat-number">37K+</span>
+            <span class="social-stat-label">Newsletter Subscribers</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         6. SOCIAL FOLLOW SECTION
+    ══════════════════════════════════════════ -->
+    <section class="social-section" aria-labelledby="social-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="social-heading">Follow me on Instagram and TikTok for travel tips and hacks!</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="social-grid">
+
+          <a href="https://www.instagram.com/p/DWm3epMgsPD/" target="_blank" rel="noopener noreferrer" class="social-card">
+            <div class="social-thumb-wrapper">
+              <img src="TCJ Website Assets/icons/slot 1.png" alt="Instagram Post" loading="lazy" />
+              <div class="social-icon instagram-icon">&#128247;</div>
+            </div>
+          </a>
+
+          <a href="https://www.tiktok.com/@thecanadianjetsetter/video/7622389920165891336" target="_blank" rel="noopener noreferrer" class="social-card">
+            <div class="social-thumb-wrapper">
+              <img src="TCJ Website Assets/icons/slot 2.png" alt="TikTok Video" loading="lazy" />
+              <div class="social-icon tiktok-icon">&#9654;</div>
+            </div>
+          </a>
+
+          <a href="https://www.instagram.com/p/DWef0WFEQvD/" target="_blank" rel="noopener noreferrer" class="social-card">
+            <div class="social-thumb-wrapper">
+              <img src="TCJ Website Assets/icons/slot 3.png" alt="Instagram Post" loading="lazy" />
+              <div class="social-icon instagram-icon">&#128247;</div>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="social-follow-ctas">
+          <a
+            href="https://www.instagram.com/thecanadianjetsetter"
+            class="btn btn-outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >@thecanadianjetsetter on Instagram →</a>
+          <a
+            href="https://www.tiktok.com/@thecanadianjetsetter"
+            class="btn btn-outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >@thecanadianjetsetter on TikTok →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════
+       7. FOOTER
+  ══════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+
+        <a href="/" class="footer-logo" aria-label="The Canadian Jetsetter — Home">
+          <img
+            src="TCJ Website Assets/logos/banner_text_logo.png"
+            alt="The Canadian Jetsetter"
+            loading="lazy"
+          />
+        </a>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="https://buy.stripe.com/aEUbKC9S22f2h1u7sC" target="_blank" rel="noopener noreferrer">Subscribe</a>
+          <a href="economy.html">Economy</a>
+          <a href="jetsetter-premium.html">Premium</a>
+          <a href="#">About</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </nav>
+
+        <p class="footer-copy">
+          &copy; <span id="footer-year"></span> The Canadian Jetsetter. All rights reserved.
+        </p>
+
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Dynamic copyright year
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    // Hamburger menu toggle
+    const hamburger = document.querySelector('.nav-hamburger');
+    const dropdown = document.getElementById('nav-dropdown');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !isOpen);
+      dropdown.setAttribute('aria-hidden', isOpen);
+      hamburger.classList.toggle('is-open', !isOpen);
+      dropdown.classList.toggle('is-open', !isOpen);
+    });
+
+    // Close menu when a link is clicked
+    dropdown.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.setAttribute('aria-expanded', 'false');
+        dropdown.setAttribute('aria-hidden', 'true');
+        hamburger.classList.remove('is-open');
+        dropdown.classList.remove('is-open');
+      });
+    });
+
+    // Close menu on outside click
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !dropdown.contains(e.target)) {
+        hamburger.setAttribute('aria-expanded', 'false');
+        dropdown.setAttribute('aria-hidden', 'true');
+        hamburger.classList.remove('is-open');
+        dropdown.classList.remove('is-open');
+      }
+    });
+
+    // ── FOLDER TABS ────────────────────────────
+    const tabBtns     = document.querySelectorAll('.tab-btn');
+    const panels      = {
+      'panel-contact':       document.getElementById('panel-contact'),
+      'panel-partnerships':  document.getElementById('panel-partnerships'),
+    };
+    const folderContent = document.getElementById('folder-content');
+
+    function applyTabState() {
+      const activeTarget = document.querySelector('.tab-btn.tab-active').dataset.target;
+
+      // Show/hide panels
+      Object.entries(panels).forEach(([id, panel]) => {
+        panel.classList.toggle('tab-panel-hidden', id !== activeTarget);
+      });
+
+      // Update content area corner: no top-left when first tab active, no top-right when second
+      folderContent.classList.toggle('second-tab-active', activeTarget === 'panel-partnerships');
+    }
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(t => {
+          t.classList.remove('tab-active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('tab-active');
+        btn.setAttribute('aria-selected', 'true');
+        applyTabState();
+      });
+    });
+
+    // Initialise on load
+    applyTabState();
+  </script>
+
+</body>
+</html>
