@@ -73,16 +73,62 @@
     <!-- ══════════════════════════════════════════
          2. HERO
     ══════════════════════════════════════════ -->
-    <section class="hero" aria-labelledby="hero-heading">
+    <section class="hero" aria-label="The Canadian Jetsetter">
       <div class="hero-inner">
-        <img
-          class="hero-logo"
-          src="TCJ Website Assets/icons/Jetsetter text logo.png"
-          alt="The Canadian Jetsetter"
-          loading="eager"
-        />
-        <h1 id="hero-heading">The Canadian Jetsetter</h1>
-        <p class="hero-sub">Subscribe for free price drop alerts for flights from all major Canadian cities!</p>
+        <nav class="social-icons" aria-label="Social media links">
+
+          <a
+            href="https://www.instagram.com/thecanadianjetsetter"
+            class="social-icon social-icon--instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2"/>
+              <circle cx="12" cy="12" r="4.5" stroke="white" stroke-width="2"/>
+              <circle cx="17.5" cy="6.5" r="1.5" fill="white"/>
+            </svg>
+          </a>
+
+          <a
+            href="https://www.youtube.com/@TheCanadianJetsetter"
+            class="social-icon social-icon--youtube"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+          >
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z" fill="white"/>
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#1a1a1a"/>
+            </svg>
+          </a>
+
+          <a
+            href="https://www.tiktok.com/@thecanadianjetsetter"
+            class="social-icon social-icon--tiktok"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok"
+          >
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.15a8.16 8.16 0 004.77 1.52V7.24a4.85 4.85 0 01-1-.55z"/>
+            </svg>
+          </a>
+
+          <a
+            href="index.html"
+            class="social-icon social-icon--globe"
+            aria-label="Website"
+          >
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+            </svg>
+          </a>
+
+        </nav>
       </div>
     </section>
 
@@ -94,23 +140,21 @@
 
         <!-- BEEHIIV EMBED -->
         <div class="embed-block">
-          <p class="embed-label">Subscribe for Free Flight Deals →</p>
+          <p class="embed-label">Subscribe for Free Flight Deals</p>
           <center><iframe src="https://embeds.beehiiv.com/cf928f6f-5523-489b-b125-b1effe279beb?slim=true" data-test-id="beehiiv-embed" height="60" frameborder="0" scrolling="no" style="border-radius: 0px !important; background-color: transparent;"></iframe></center>
         </div>
-
-        <h2 id="links-heading">Get Ready to Fly For Less</h2>
 
         <!-- GROUP 1: Our Offerings (icon cards) -->
         <div class="offering-cards">
 
           <a href="economy.html" class="offering-card">
             <img src="TCJ Website Assets/gifs/inboxgif.gif" alt="" class="offering-gif" loading="lazy" />
-            <span class="offering-label">Economy</span>
+            <span class="offering-label">Jetsetter Economy</span>
           </a>
 
           <a href="jetsetter-premium.html" class="offering-card">
             <img src="TCJ Website Assets/gifs/inboxgif.gif" alt="" class="offering-gif" loading="lazy" />
-            <span class="offering-label">Premium</span>
+            <span class="offering-label">Jetsetter Premium</span>
           </a>
 
           <a
@@ -120,7 +164,7 @@
             rel="noopener noreferrer"
           >
             <div class="cc-anim" aria-hidden="true">
-              <div class="cc-card">
+              <div class="cc-flip-inner">
                 <div class="cc-front">
                   <div class="cc-chip"></div>
                   <div class="cc-number-row">
@@ -142,77 +186,138 @@
         <div class="link-group">
           <h3 class="group-heading">Featured Credit Cards</h3>
 
-          <a
-            href="https://thecanadianjetsetter.milesopedia.com/credit-cards/td-first-class-travel-visa-infinite-card/"
-            class="link-btn link-btn--filled"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            TD First Class Travel Visa
-          </a>
+          <div class="cc-grid">
 
-          <a
-            href="https://thecanadianjetsetter.milesopedia.com/analyze/credit-cards/?miles_ids=1774%2C1776%2C1777&miles_source=copy_link"
-            class="link-btn link-btn--outline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            American Express Cards
-          </a>
+            <!-- Row 1 -->
+            <a
+              href="https://thecanadianjetsetter.milesopedia.com/credit-cards/american-express-cobalt-card/"
+              class="cc-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="cc-badge" aria-hidden="true">
+                <img src="TCJ Website Assets/logos/amex logo (1).png" alt="American Express" class="badge-logo">
+              </span>
+              <span class="cc-card-info">
+                <span class="cc-card-name">Amex Cobalt Card</span>
+                <span class="cc-apply">Learn More &amp; Apply Here →</span>
+              </span>
+            </a>
 
-          <a
-            href="https://thecanadianjetsetter.milesopedia.com/credit-cards/marriott-bonvoy-business-american-express-card/"
-            class="link-btn link-btn--filled"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Amex Marriott Business
-          </a>
+            <a
+              href="https://www.eqbank.ca/personal-banking/payments/card?utm_source=jetsetter&utm_medium=social&utm_campaign=awareness_roc&utm_term=card"
+              class="cc-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="cc-badge" aria-hidden="true">
+                <svg width="30" height="21" viewBox="0 0 30 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1" y="1" width="28" height="19" rx="3.5" stroke="white" stroke-width="1.5"/>
+                  <rect x="0" y="5.5" width="30" height="5" fill="white" opacity="0.55"/>
+                  <rect x="4" y="14" width="10" height="1.5" rx="0.75" fill="white"/>
+                  <rect x="4" y="17" width="6" height="1.5" rx="0.75" fill="white"/>
+                </svg>
+              </span>
+              <span class="cc-card-info">
+                <span class="cc-card-name">EQ Bank Card</span>
+                <span class="cc-apply">Learn More &amp; Apply Here →</span>
+              </span>
+            </a>
 
-          <a
-            href="https://thecanadianjetsetter.milesopedia.com/credit-cards/marriott-bonvoy-american-express-card/"
-            class="link-btn link-btn--outline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Amex Marriott Personal
-          </a>
+            <!-- Row 2 -->
+            <a
+              href="https://thecanadianjetsetter.milesopedia.com/credit-cards/td-aeroplan-visa-infinite-card/"
+              class="cc-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="cc-badge" aria-hidden="true">
+                <img src="TCJ Website Assets/logos/visa logo (1).png" alt="Visa" class="badge-logo">
+              </span>
+              <span class="cc-card-info">
+                <span class="cc-card-name">TD Aeroplan Visa</span>
+                <span class="cc-apply">Learn More &amp; Apply Here →</span>
+              </span>
+            </a>
 
-          <a
-            href="https://thecanadianjetsetter.milesopedia.com/credit-cards/american-express-cobalt-card/"
-            class="link-btn link-btn--filled"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Amex Cobalt Card
-          </a>
+            <a
+              href="https://thecanadianjetsetter.milesopedia.com/credit-cards/avion-visa-infinite-rbc/"
+              class="cc-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="cc-badge" aria-hidden="true">
+                <img src="TCJ Website Assets/logos/visa logo (1).png" alt="Visa" class="badge-logo">
+              </span>
+              <span class="cc-card-info">
+                <span class="cc-card-name">RBC Avion Visa</span>
+                <span class="cc-apply">Learn More &amp; Apply Here →</span>
+              </span>
+            </a>
 
-          <a
-            href="https://www.eqbank.ca/personal-banking/payments/card?utm_source=jetsetter&utm_medium=social&utm_campaign=awareness_roc&utm_term=card"
-            class="link-btn link-btn--outline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            EQ Bank Card
-          </a>
+            <!-- Row 3 -->
+            <a
+              href="https://thecanadianjetsetter.milesopedia.com/credit-cards/td-first-class-travel-visa-infinite-card/"
+              class="cc-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="cc-badge" aria-hidden="true">
+                <img src="TCJ Website Assets/logos/visa logo (1).png" alt="Visa" class="badge-logo">
+              </span>
+              <span class="cc-card-info">
+                <span class="cc-card-name">TD First Class Travel Visa</span>
+                <span class="cc-apply">Learn More &amp; Apply Here →</span>
+              </span>
+            </a>
 
-          <a
-            href="https://thecanadianjetsetter.milesopedia.com/credit-cards/td-aeroplan-visa-infinite-card/"
-            class="link-btn link-btn--filled"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            TD Aeroplan Visa
-          </a>
+            <a
+              href="https://thecanadianjetsetter.milesopedia.com/analyze/credit-cards/?miles_ids=1774%2C1776%2C1777&miles_source=copy_link"
+              class="cc-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="cc-badge" aria-hidden="true">
+                <img src="TCJ Website Assets/logos/amex logo (1).png" alt="American Express" class="badge-logo">
+              </span>
+              <span class="cc-card-info">
+                <span class="cc-card-name">American Express Cards</span>
+                <span class="cc-apply">Learn More &amp; Apply Here →</span>
+              </span>
+            </a>
 
-          <a
-            href="https://thecanadianjetsetter.milesopedia.com/credit-cards/avion-visa-infinite-rbc/"
-            class="link-btn link-btn--outline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            RBC Avion Visa
-          </a>
+            <!-- Row 4 -->
+            <a
+              href="https://thecanadianjetsetter.milesopedia.com/credit-cards/marriott-bonvoy-business-american-express-card/"
+              class="cc-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="cc-badge" aria-hidden="true">
+                <img src="TCJ Website Assets/logos/amex logo (1).png" alt="American Express" class="badge-logo">
+              </span>
+              <span class="cc-card-info">
+                <span class="cc-card-name">Amex Marriott Business</span>
+                <span class="cc-apply">Learn More &amp; Apply Here →</span>
+              </span>
+            </a>
+
+            <a
+              href="https://thecanadianjetsetter.milesopedia.com/credit-cards/marriott-bonvoy-american-express-card/"
+              class="cc-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="cc-badge" aria-hidden="true">
+                <img src="TCJ Website Assets/logos/amex logo (1).png" alt="American Express" class="badge-logo">
+              </span>
+              <span class="cc-card-info">
+                <span class="cc-card-name">Amex Marriott Personal</span>
+                <span class="cc-apply">Learn More &amp; Apply Here →</span>
+              </span>
+            </a>
+
+          </div>
 
         </div>
 
