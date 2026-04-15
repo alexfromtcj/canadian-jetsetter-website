@@ -364,6 +364,16 @@ body {
   font-family: var(--font);
 }
 
+.post-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--black);
+  padding: 2px 20px 18px;
+  margin: 0;
+}
+
 .featured-image {
   width: 100%;
   height: auto;

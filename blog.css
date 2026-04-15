@@ -996,3 +996,43 @@ footer {
 .mobile-offerings-sub li a {
   padding-left: 32px;
 }
+
+/* ── SEARCH INPUT ──────────────────────────── */
+.blog-search-input {
+  flex: 1;
+  min-width: 180px;
+  max-width: 300px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--cream);
+  font-family: var(--font);
+  font-size: 0.88rem;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.blog-search-input::placeholder {
+  color: var(--cream);
+  opacity: 0.4;
+}
+
+.blog-search-input:focus {
+  border-color: var(--red);
+  background: rgba(255, 255, 255, 0.11);
+}
+
+/* Clear button rendered by WebKit/Blink */
+.blog-search-input::-webkit-search-cancel-button {
+  filter: invert(0.7);
+  cursor: pointer;
+}
+
+/* ── NO RESULTS ────────────────────────────── */
+.blog-no-results {
+  text-align: center;
+  padding: 56px 0;
+  color: var(--cream-muted);
+  font-size: 1rem;
+}
